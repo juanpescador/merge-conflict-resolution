@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Math;
+using Basket.FakeItem;
 
 namespace Basket
 {
@@ -11,7 +12,7 @@ namespace Basket
         {
             foreach (item in basket.Items)
             {
-                Subtotal += 10; // Don't have access to item price yet, assume each item costs 10.
+                Subtotal += item.Price; // Quick and dirty, ignores item amount as it's not available yet.
             }
     }
 }
