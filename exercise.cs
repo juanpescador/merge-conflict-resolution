@@ -1,4 +1,5 @@
 ﻿using System;
+using Basket.Item;
 using System.Math;
 using Basket.FakeItem;
 
@@ -8,11 +9,11 @@ namespace Basket
     {
         public decimal SubTotal { get; set; }
 
-        public decimal AddBasketItems(Basket basket)
+        public decimal CalculateBasketSubTotal(Basket basket)
         {
             foreach (item in basket.Items)
             {
-                Subtotal += item.Price; // Quick and dirty, ignores item amount as it's not available yet.
+                Subtotal += item.Amount * item.Price;
             }
     }
 }
